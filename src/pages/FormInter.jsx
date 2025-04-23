@@ -1,9 +1,22 @@
 import PresenceTable from "../components/Table";
+import ModuleInfo from "../components/ModuleInfo";
 
 
 export default function FormInter() {
+
+    const data = [
+        {
+            icon: "book-open",
+            title: "Framework CSS",
+        },
+        {
+            icon: "users",
+            title: "B3 Dev",
+        },
+    ];
+
     return (
-        <div className="flex-1 py-[var(--left-margin)]">
+        <div className="flex-1 py-[var(--left-margin)] items-center flex flex-col">
               <h1>Formulaire de satisfaction</h1>
               <div className="flex items-center gap-[var(--big-space)]">
                 <div>
@@ -31,6 +44,7 @@ export default function FormInter() {
                 </div>
                 <button>Formulaire</button>
               </div>
+              <ModuleInfo data={data} />
               <PresenceTable />
             </div>
     )

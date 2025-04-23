@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function ModuleInter() {
   const [open, setOpen] = useState(false); 
   return (
-    <div className="flex-1 py-[var(--left-margin)]">
+    <div className="flex-1 py-[var(--left-margin)] items-center flex flex-col">
       <h1>Module 2 : Framework CSS</h1>
       <div className="flex items-center gap-[var(--big-space)]">
         <div>
