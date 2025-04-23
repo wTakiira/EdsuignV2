@@ -17,7 +17,7 @@ export default function ModuleInfo({ data }) {
         width: 770,
         display: "grid", 
         gridTemplateColumns: "repeat(2, 1fr)", 
-        gap: "var(--left-margin)",
+        gap: "var(--big-space)",
       }}
     >
       {data.map((item, index) => (
