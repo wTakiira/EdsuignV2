@@ -1,9 +1,11 @@
 import PresenceTable from "../components/Table";
 import FeatherIcon from 'feather-icons-react';
 import QrCodeModal from "../components/QrCodeModal";
+import { useState } from "react";
 
 
 export default function ModuleInter() {
+  const [open, setOpen] = useState(false); 
   return (
     <div className="flex-1 py-[var(--left-margin)]">
       <h1>Module 2 : Framework CSS</h1>
