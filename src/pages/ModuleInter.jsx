@@ -1,5 +1,6 @@
 import PresenceTable from "../components/Table";
 import FeatherIcon from 'feather-icons-react';
+import QrCodeModal from "../components/QrCodeModal";
 
 
 export default function ModuleInter() {
@@ -14,6 +15,8 @@ export default function ModuleInter() {
             height="63"
             viewBox="0 0 64 63"
             fill="none"
+            onClick={() => setOpen(true)}
+            style={{ cursor: 'pointer' }}
           >
             <g id="Vector">
               <rect
@@ -30,9 +33,16 @@ export default function ModuleInter() {
             </g>
           </svg>
         </div>
+
         <button>Formulaire</button>
       </div>
       <PresenceTable />
+      <QrCodeModal
+  open={open}
+  onClose={() => setOpen(false)}
+  qrCodeUrl="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tonlien.com"
+/>
     </div>
+    
   );
 }
