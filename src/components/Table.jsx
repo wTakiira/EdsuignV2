@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 
-const TABLE_HEAD = [
+const TABLE_HEAD_SIGN = [
     "Élève",
     "Présence",
     "Heure de signature",
@@ -15,7 +15,13 @@ const TABLE_HEAD = [
     "Actions",
 ];
 
-const TABLE_ROWS = [
+const TABLE_HEAD_FORM = [
+    "Élève",
+    "Complétion",
+    "Actions",
+];
+
+const TABLE_ROWS_SIGN = [
     {
         name: "Sarah Eastern",
         presence: "Présent",
@@ -54,9 +60,28 @@ const TABLE_ROWS = [
     },
 ];
 
-export default function PresenceTable() {
+const TABLE_ROWS_FORM = [
+    {
+        name: "Sarah Eastern",
+        completion: 45,
+    },
+    {
+        name: "Sarah Eastern",
+        completion: 35,
+    },
+    {
+        name: "Sarah Eastern",
+        completion: 10,
+    },
+    {
+        name: "Sarah Eastern",
+        completion: 70,
+    },
+];
 
-    const [rows, setRows] = useState(TABLE_ROWS);
+export default function PresenceTable(type) {
+
+    const [rows, setRows] = useState(TABLE_ROWS_SIGN);
 
     const handleCancel = (idx) => {
         // Passe à "Absent" et reset la signature/heure
@@ -94,7 +119,22 @@ export default function PresenceTable() {
             <table className="min-w-max w-full table-auto text-left">
                 <thead>
                     <tr>
-                        {TABLE_HEAD.map((head) => (
+                        {type.type === 1 && TABLE_HEAD_SIGN.map((head) => (
+                            <th
+                                key={head}
+                                className="border-b border-blue-gray-100 bg-blue-gray-50 p-4"
+                            >
+                                <Typography
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="font-bold leading-none opacity-70"
+                                >
+                                    {head}
+                                </Typography>
+                            </th>
+                        ))}
+                        {type.type === 2 && 
+                        TABLE_HEAD_FORM.map((head) => (
                             <th
                                 key={head}
                                 className="border-b border-blue-gray-100 bg-blue-gray-50 p-4"
@@ -111,7 +151,7 @@ export default function PresenceTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    {rows.map((row, index) => {
+                    {type.type === 1 && rows.map((row, index) => {
                         const isLast = index === rows.length - 1;
                         const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
                         return (
@@ -156,6 +196,38 @@ export default function PresenceTable() {
                                             Signer
                                         </Button>
                                     )}
+                                </td>
+                            </tr>
+                        );
+                    })}
+
+                    {type.type === 2 && TABLE_ROWS_FORM.map((row, index) => {
+                        const isLast = index === TABLE_ROWS_FORM.length - 1;
+                        const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
+                        return (
+                            <tr key={index} className="even:bg-blue-gray-50/50">
+                                <td className={classes}>
+                                    <Typography variant="small" color="blue-gray" className="font-normal">
+                                        {row.name}
+                                    </Typography>
+                                </td>
+                                <td className={classes}>
+                                    <div className="w-[400px] bg-[var(--secondary-bis)] rounded-full h-[25px] relative">
+                                        <div
+                                            className="bg-[var(--primary)] h-[25px] rounded-full"
+                                            style={{ width: `${row.completion}%` }}
+                                        ></div>
+                                        <p style={{
+                                            position: "absolute",
+                                            left: 10,
+                                            top: "0",
+                                        }}>{row.completion}% complété</p>
+                                    </div>
+                                </td>
+                                <td className={classes}>
+                                    <Button color="indigo" size="sm">
+                                        Détails
+                                    </Button>
                                 </td>
                             </tr>
                         );

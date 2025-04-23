@@ -45,7 +45,7 @@ export default function FormInter() {
                 <button>Formulaire</button>
               </div>
               <ModuleInfo data={data} />
-              <PresenceTable />
+              <PresenceTable type={2} />
             </div>
     )
 }

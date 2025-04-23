@@ -39,7 +39,7 @@ export default function ModuleInter() {
 
         <button>Formulaire</button>
       </div>
-      <PresenceTable />
+      <PresenceTable type={1} />
    
     </div>
        <QrCodeModal
