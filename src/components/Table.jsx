@@ -133,7 +133,7 @@ export default function PresenceTable() {
                                         }
                                         variant="ghost"
                                         size="sm"
-                                        className="font-bold px-[16px] py-[4px] flex rounded-[4px]"
+                                        className="font-bold px-[16px] py-[4px] flex rounded-[4px] w-[fit-content]"
                                     />
                                 </td>
                                 <td className={classes}>

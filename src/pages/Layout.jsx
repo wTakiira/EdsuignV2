@@ -8,11 +8,11 @@ export default function Layout({ children }) {
     <>
       <NavBar />
       <main
-        className="pl-[var(--left-margin)] h-full flex-col"
+        className="pl-[var(--left-margin)] h-full flex-1"
         style={{
           justifyContent: "center",
           display: "flex",
-          alignItems: "center",
+          // alignItems: "center",
           flexWrap: "wrap",
         }}
       >

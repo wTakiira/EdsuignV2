@@ -5,8 +5,7 @@ export default function ListModule({ children }) {
     console.log(date);
     return (
       <li style={{}}>
-        <div>
-          {/* <svg
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             width="28"
             height="28"
@@ -23,8 +22,7 @@ export default function ListModule({ children }) {
                 stroke-linejoin="round"
               />
             </g>
-          </svg> */}
-        </div>
+          </svg>
         <p>{date.date}</p>
       </li>
     );

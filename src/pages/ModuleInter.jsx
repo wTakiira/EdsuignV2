@@ -2,7 +2,7 @@ import PresenceTable from "../components/Table";
 
 export default function ModuleInter() {
   return (
-    <>
+    <div className="flex-1 py-[var(--left-margin)]">
       <h1>Module 2 : Framework CSS</h1>
       <div className="flex items-center gap-[var(--big-space)]">
         <div>
@@ -31,6 +31,6 @@ export default function ModuleInter() {
         <button>Formulaire</button>
       </div>
       <PresenceTable />
-    </>
+    </div>
   );
 }
