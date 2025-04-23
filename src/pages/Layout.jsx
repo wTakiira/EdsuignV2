@@ -10,12 +10,13 @@ export default function Layout() {
     <>
       <NavBar />
       <main
-        className="pl-[var(--left-margin)] h-full flex-1"
+        className="h-full flex-1"
         style={{
           justifyContent: "center",
           display: "flex",
           // alignItems: "center",
           flexWrap: "wrap",
+          paddingLeft: location.pathname === "/form-inter" || location.pathname === "/" ? "calc(var(--left-margin) * 3 + var(--small-space))" : "var(--left-margin)",
         }}
       >
         {location.pathname === "/form-inter" || location.pathname === "/" ? <ListModule /> : null}

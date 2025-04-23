@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <nav className="absolute left-[20px] px-[24px] py-[44px] h-full bg-[var(--primary)] rounded-[var(--custom-big-radius)] flex flex-col gap-[24px] my-[var(--small-space)]">
+    <nav className="fixed left-[20px] px-[24px] py-[44px] bg-[var(--primary)] rounded-[var(--custom-big-radius)] flex flex-col gap-[24px] my-[var(--small-space)]"
+    style={{
+      height: "calc(100vh - var(--big-space))",
+    }}
+    >
       <Link to="/">
         <FeatherIcon icon="home" color='var(--secondary)'size='32px'/>
       </Link>
