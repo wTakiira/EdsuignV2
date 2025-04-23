@@ -19,8 +19,19 @@
   --secondary-bis: #FFEEDD;
   --tertiary: #F8F7FF;
   --quaternary: #323232;
+  --placeholder: #d9d9d9;
 
 
+  --custom-big-radius: 14px;
+  --custom-small-radius: 4px;
+  --big-space: 40px;
+  --small-space: 20px;
+  --left-margin: 100px;
+}
+
+#root {
+  flex-grow: 1;
+  height: 100vh;
 }
 
 a {
@@ -63,6 +74,8 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+
 
 @media (prefers-color-scheme: light) {
   :root {

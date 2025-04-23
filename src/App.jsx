@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import './App.css'
-import NavBar from './components/Navbar'
-import PresenceTable from './components/Table'
+import "./App.css";
+import Layout from "./pages/Layout";
+import ModuleInter from "./pages/ModuleInter";
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-
     //   <><div className="w-[1512px] h-[982px] px-24 py-5 relative bg-white inline-flex justify-start items-center gap-5 overflow-hidden">
     //   <NavBar />
     //   <div className="w-44 self-stretch p-5 bg-Secondary rounded-2xl inline-flex flex-col justify-start items-center gap-10">
@@ -160,8 +159,21 @@ function App() {
     //   </div>
     // </div> */}
     // </div><PresenceTable /></>
-    <PresenceTable />
-  )
+
+
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<ModuleInter />} />
+        </Route>
+      </Routes>
+    
+
+    // <div className="w-full h-full pl-24 relative bg-white inline-flex justify-start items-center gap-5 overflow-hidden">
+    //   <section className="flex-1 flex-col">
+    //   <PresenceTable />
+    //   </section>
+    // </div>
+  );
 }
 
-export default App
+export default App;
