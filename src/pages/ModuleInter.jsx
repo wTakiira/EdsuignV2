@@ -1,4 +1,6 @@
 import PresenceTable from "../components/Table";
+import FeatherIcon from 'feather-icons-react';
+
 
 export default function ModuleInter() {
   return (

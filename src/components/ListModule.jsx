@@ -1,3 +1,5 @@
+import FeatherIcon from 'feather-icons-react';
+
 export default function ListModule({ children }) {
   const data = ["01/01/2023", "02/01/2023", "03/01/2023", "04/01/2023"];
 
@@ -5,7 +7,7 @@ export default function ListModule({ children }) {
     console.log(date);
     return (
       <li style={{}}>
-          <svg
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             width="28"
             height="28"
@@ -22,7 +24,8 @@ export default function ListModule({ children }) {
                 stroke-linejoin="round"
               />
             </g>
-          </svg>
+          </svg> */}
+          <FeatherIcon icon="clock" />
         <p>{date.date}</p>
       </li>
     );

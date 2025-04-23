@@ -1,9 +1,11 @@
 import NavBar from "../components/Navbar";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import ListModule from "../components/ListModule";
 
 
-export default function Layout({ children }) {
+export default function Layout() {
+  const location = useLocation();
+
   return (
     <>
       <NavBar />
@@ -16,7 +18,7 @@ export default function Layout({ children }) {
           flexWrap: "wrap",
         }}
       >
-        <ListModule />
+        {location.pathname === "/form-inter" || location.pathname === "/" ? <ListModule /> : null}
         <Outlet />
       </main>
     </>
