@@ -5,7 +5,7 @@ export default function ListModule({ children }) {
 
   const ElementModule = (date) => {
     return (
-      <li className='p-[20px] rounded-[var(--custom-big-radius)] bg-[var(--secondary-bis)] gap-[20px]'>
+      <li className='p-[var(--small-space)] rounded-[var(--custom-big-radius)] bg-[var(--secondary-bis)] flex items-center flex-col items-start justify-center gap-[10px]'>
           {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             width="28"
