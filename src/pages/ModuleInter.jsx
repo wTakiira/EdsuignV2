@@ -2,16 +2,21 @@ import PresenceTable from "../components/Table";
 import FeatherIcon from 'feather-icons-react';
 import QrCodeModal from "../components/QrCodeModal";
 import { useState } from "react";
+import NameDropdown from "../components/NameDropDown";
 
 
 export default function ModuleInter() {
   const [open, setOpen] = useState(false); 
+  const [selectedName, setSelectedName ] = useState(""); 
+
+  const names = ["Ryo Aaron", "Sarah Eastern", "Jean Dupont"];
   return (
     <>
     <div className="flex-1 py-[var(--left-margin)] items-center flex flex-col">
       <h1>Module 2 : Framework CSS</h1>
       <div className="flex items-center gap-[var(--big-space)]">
         <div>
+  
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="64"
@@ -40,6 +45,7 @@ export default function ModuleInter() {
         <button>Formulaire</button>
       </div>
       <PresenceTable type={1} />
+
    
     </div>
        <QrCodeModal
@@ -47,6 +53,11 @@ export default function ModuleInter() {
        onClose={() => setOpen(false)}
        qrCodeUrl="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tonlien.com"
      />
+           <NameDropdown
+  names={names}
+  value={selectedName}
+  onChange={setSelectedName}
+/>
      </>
     
   );
