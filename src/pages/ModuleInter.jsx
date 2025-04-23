@@ -7,6 +7,7 @@ import { useState } from "react";
 export default function ModuleInter() {
   const [open, setOpen] = useState(false); 
   return (
+    <>
     <div className="flex-1 py-[var(--left-margin)] items-center flex flex-col">
       <h1>Module 2 : Framework CSS</h1>
       <div className="flex items-center gap-[var(--big-space)]">
@@ -39,12 +40,14 @@ export default function ModuleInter() {
         <button>Formulaire</button>
       </div>
       <PresenceTable />
-      <QrCodeModal
-  open={open}
-  onClose={() => setOpen(false)}
-  qrCodeUrl="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tonlien.com"
-/>
+   
     </div>
+       <QrCodeModal
+       open={open}
+       onClose={() => setOpen(false)}
+       qrCodeUrl="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tonlien.com"
+     />
+     </>
     
   );
 }

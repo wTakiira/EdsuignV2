@@ -1,39 +1,39 @@
-import React from "react";
+import { Dialog } from "@material-tailwind/react";
 
 export default function QrCodeModal({ open, onClose, qrCodeUrl }) {
-  if (!open) return null;
-
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center">
-      {/* Overlay */}
-      <div
-        className="absolute inset-0 bg-opacity-30"
+    <Dialog
+      open={open}
+      handler={onClose}
+      size="xl"
+      animate={{
+        mount: { y: 0, opacity: 1 },
+        unmount: { y: 200, opacity: 0 },
+      }}
+      className="fixed left-1/2 transform -translate-x-1/2 opacity-100 bg-[var(--primary-bis)] flex flex-col items-center justify-start h-[60vh] w-[90vw] rounded-2xl fixed overflow-hidden bottom-0"
+    >
+      {/* Bouton de fermeture */}
+      <button
         onClick={onClose}
-      />
-      {/* Modal */}
-      <div
-        className="relative w-[90%] h-[60vh] bg-[#B8A5F2] rounded-t-2xl shadow-xl flex flex-col items-center pt-8"
+        className="absolute left-8 top-6 w-9 h-7 bg-[var(--secondary-bis)] rounded flex items-center justify-center"
+        aria-label="Fermer"
       >
-        {/* Bouton de fermeture */}
-        <button
-          onClick={onClose}
-          className="absolute left-4 top-4 bg-[#F4E7DB] text-xs rounded px-2 py-1 font-bold"
-        >
-          ×
-        </button>
-        {/* Titre */}
-        <h2 className="mb-6 text-2xl font-bold text-center">
-          Scannez le QR code
-        </h2>
-        {/* QR code */}
-        <div className="bg-[#F4E7DB] rounded-lg p-6 flex items-center justify-center">
-          <img
-            src={qrCodeUrl}
-            alt="QR Code"
-            className="w-36 h-36"
-          />
-        </div>
+        <span className="text-[var(--quaternary)] text-lg font-bold">×</span>
+      </button>
+      {/* Titre */}
+      <h2 className="mt-12 mb-8 text-4xl font-bold text-black text-center font-['Poppins'] leading-none">
+        Scannez le QR code
+      </h2>
+      {/* QR code dans un carré beige */}
+      <div className="bg-[var(--secondary)] rounded-2xl p-6 flex items-center justify-center"
+           style={{ width: '18rem', height: '18rem' }}>
+        <img
+          src={qrCodeUrl}
+          alt="QR Code"
+          className="w-56 h-56"
+          style={{ objectFit: "contain" }}
+        />
       </div>
-    </div>
+    </Dialog>
   );
 }
