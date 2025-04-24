@@ -4,6 +4,7 @@ import QrCodeModal from "../components/QrCodeModal";
 import { useState } from "react";
 // import Dropdown from "../components/Dropdown";
 import Signature from "../components/Signature";
+import StarRatingBox from "../components/Stars";
 
 export default function ModuleStagiaire() {
   const [open, setOpen] = useState(false);
@@ -89,6 +90,7 @@ export default function ModuleStagiaire() {
         </div>
         {selectedName !== "no-name" && <Signature />}
       </div>
+      <StarRatingBox question="ahh"></StarRatingBox>
     </>
   );
 }
