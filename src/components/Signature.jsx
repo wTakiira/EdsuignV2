@@ -3,7 +3,7 @@ import SignatureCanvas from "react-signature-canvas";
 import FeatherIcon from "feather-icons-react";
 import CustomButton from "./CustomButton";
 
-export default function SignatureBox() {
+export default function SignatureBox({onValidate}) {
   const [showPad, setShowPad] = useState(false);
   const signatureRef = useRef(null);
   const [signatureURL, setSignatureURL] = useState(null);
@@ -12,6 +12,7 @@ export default function SignatureBox() {
     if (signatureRef.current) {
         setSignatureURL(signatureRef.current.getCanvas().toDataURL("image/png"));
       setShowPad(false);
+      onValidate();
     }
   };
 
@@ -22,7 +23,7 @@ export default function SignatureBox() {
   };
 
   return (
-    <div className="w-[900px] min-h-[260px] bg-white rounded-2xl flex flex-col justify-between relative items-center">
+    <div className="w-full min-h-[260px] bg-white rounded-2xl flex flex-col justify-between relative items-center">
 
       {/* Zone de signature */}
       <div className="w-full flex-1 flex items-center justify-center relative ">
@@ -30,7 +31,7 @@ export default function SignatureBox() {
        
         {!showPad && !signatureURL && (
           <div
-            className="w-full h-40 rounded-xl border-2 border-[var(--secondary)] flex items-center justify-center cursor-pointer relative"
+            className="w-full h-full rounded-xl border-2 border-[var(--secondary)] flex items-center justify-center cursor-pointer relative"
             onClick={() => setShowPad(true)}
           >
              <span className="absolute left-6 top-4 text-[var(--placeholder)] text-lg font-semibold font-['Poppins']">

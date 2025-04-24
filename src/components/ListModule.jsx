@@ -23,12 +23,9 @@ export default function ListModule({ children }) {
   const ElementModule = ({ date, isSelected }) => {
     return (
       <li
-        className="p-[var(--small-space)] rounded-[var(--custom-big-radius)] flex items-center flex-col items-start justify-center gap-[10px]"
-        style={{
-          backgroundColor: isSelected
-            ? "var(--primary)"
-            : "var(--secondary-bis)",
-        }}
+        className={`p-[var(--small-space)] rounded-[var(--custom-big-radius)] flex items-center flex-col items-start justify-center gap-[10px] ${
+          isSelected ? "bg-[var(--primary)]" : "bg-[var(--secondary-bis)]"
+        }`}
       >
         <FeatherIcon
           icon="clock"
@@ -36,9 +33,9 @@ export default function ListModule({ children }) {
           size="32px"
         />
         <p
-          style={{
-            color: isSelected ? "var(--tertiary)" : "var(--quaternary)",
-          }}
+          className={`subtile-h3 ${
+            isSelected ? "text-[var(--tertiary)]" : "text-[var(--quaternary)]"
+          }`}
         >
           {date}
         </p>
@@ -47,12 +44,11 @@ export default function ListModule({ children }) {
   };
 
   return (
-    <div className="flex flex-col gap-[var(--big-space)] w-[170px] h-full bg-[var(--secondary)] p-[10px] rounded-[var(--custom-big-radius)] m-[var(--small-space)]"
-    style={{
-      height: "calc(100vh - var(--big-space))",
-      position: "fixed",
-      left: "var(--left-margin)",
-    }}
+    <div
+      className="flex flex-col gap-[var(--big-space)] w-[170px] h-full bg-[var(--secondary)] p-[10px] rounded-[var(--custom-big-radius)] m-[var(--small-space)] fixed left-[var(--left-margin)]"
+      style={{
+        height: "calc(100vh - var(--big-space))",
+      }}
     >
       <h3 className="text-center mt-[10px]">Autres dates du modules</h3>
       <ul className="flex flex-col gap-[var(--small-space)]">

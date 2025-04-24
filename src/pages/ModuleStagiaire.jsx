@@ -2,11 +2,9 @@ import PresenceTable from "../components/Table";
 import FeatherIcon from "feather-icons-react";
 import QrCodeModal from "../components/QrCodeModal";
 import { useState } from "react";
-// import Dropdown from "../components/Dropdown";
 import Signature from "../components/Signature";
 import CSSImage from "../assets/css.jpeg";
 import ModuleInfo from "../components/ModuleInfo";
-import StarRatingBox from "../components/Stars";
 
 export default function ModuleStagiaire() {
   const [open, setOpen] = useState(false);
@@ -56,61 +54,19 @@ export default function ModuleStagiaire() {
 
   return (
     <>
-      <div className="flex-1 py-[var(--left-margin)] items-center flex flex-col">
-        <div
-          style={{
-            display: "flex",
-            // alignItems: "center",
-            gap: "var(--big-space)",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <h1>Module 2 : Framework CSS</h1>
-            <div 
-            style={{
-                flex:1,
-                overflow: "hidden",
-                backgroundImage: `url(${CSSImage})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat"
-            }}>
-              {/* <img
-                src={CSSImage}
-                alt=""
-                style={{width: "100%", height: "auto", objectFit: "cover"}}
-              /> */}
-            </div>
+      <div className="flex-1 p-[var(--small-space)] flex flex-col items-center gap-[var(--big-space)] px-[var(--big-space)]">
+        <div className="flex gap-[var(--big-space)]">
+          <div className="flex flex-col gap-[var(--big-space)] flex-1">
+            <h1 className="h1">Module 2 : Framework CSS</h1>
             <div
+              className="flex-1 overflow-hidden bg-cover bg-center bg-no-repeat rounded-[var(--custom-big-radius)]"
               style={{
-                display: "flex",
-                alignItems: "center",
-                position: "relative",
+                backgroundImage: `url(${CSSImage})`,
               }}
-            >
+            ></div>
+            <div className="flex items-center relative">
               <select
-                name=""
-                id=""
-                style={{
-                  width: "100%",
-                  height: "50px",
-                  backgroundColor: "var(--primary-bis)",
-                  borderRadius: "var(--custom-big-radius)",
-                  fontFamily: "Poppins",
-                  color: "var(--tertiary)",
-                  padding: "10px",
-                  border: "none",
-                  outline: "none",
-                  cursor: "pointer",
-                  appearance: "none",
-                  WebkitAppearance: "none",
-                  MozAppearance: "none",
-                }}
+                className="w-full h-[50px] bg-[var(--primary-bis)] rounded-[var(--custom-big-radius)] font-['Poppins'] text-[20px] font-semibold text-[var(--tertiary)] px-[10px] border-none outline-none cursor-pointer appearance-none"
                 onChange={(e) => {
                   setSelectedName(e.target.value);
                 }}
@@ -132,10 +88,7 @@ export default function ModuleStagiaire() {
                 icon="chevron-down"
                 size={50}
                 color="var(--tertiary)"
-                style={{
-                  position: "absolute",
-                  right: "0px",
-                }}
+                className="absolute right-0"
               />
             </div>
           </div>
@@ -144,8 +97,6 @@ export default function ModuleStagiaire() {
 
         {selectedName !== "no-name" && <Signature />}
       </div>
-{/* <StarRatingBox question="ahh"></StarRatingBox> */}
     </>
   );
 }
-

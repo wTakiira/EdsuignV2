@@ -9,36 +9,17 @@ export default function ModuleInfo({ data, disposition }) {
 
   return (
     <ul
-      style={{
-        padding: "var(--big-space)",
-        borderRadius: "var(--custom-big-radius)",
-        borderWidth: "1px",
-        borderColor: "var(--primary)",
-        width: 770,
-        display: disposition || "grid", 
-        gridTemplateColumns: disposition ? "none" : "repeat(2, 1fr)",
-        flexDirection: disposition ? "column" : "none", 
-        gap: "var(--big-space)",
-      }}
+      className={`p-[var(--big-space)] rounded-[var(--custom-big-radius)] border border-[var(--primary)] ${
+        disposition ? "flex flex-col" : "grid grid-cols-2"
+      } gap-[var(--big-space)] flex-1`}
     >
       {data.map((item, index) => (
         <li
           key={index}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "var(--small-space)", 
-          }}
+          className="flex items-center gap-[var(--small-space)]"
         >
           <FeatherIcon icon={item.icon} size={40} color="var(--primary)" />
-          <p
-            style={{
-              fontWeight: 600,
-              fontSize: 32,
-            }}
-          >
-            {item.title}
-          </p>
+          <p className="subtile-h2">{item.title}</p>
         </li>
       ))}
     </ul>

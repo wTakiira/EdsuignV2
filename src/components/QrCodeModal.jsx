@@ -10,7 +10,7 @@ export default function QrCodeModal({ open, onClose, qrCodeUrl }) {
         mount: { y: 0, opacity: 1 },
         unmount: { y: 200, opacity: 0 },
       }}
-      className="fixed left-1/2 transform -translate-x-1/2 opacity-100 bg-[var(--primary-bis)] flex flex-col items-center justify-start h-[60vh] w-[90vw] rounded-2xl fixed overflow-hidden bottom-0"
+      className="fixed left-1/2 transform -translate-x-1/2 opacity-100 bg-[var(--primary-bis)] flex flex-col items-center justify-start h-[60vh] w-[90vw] rounded-2xl overflow-hidden bottom-0"
     >
       {/* Bouton de fermeture */}
       <button
@@ -25,13 +25,11 @@ export default function QrCodeModal({ open, onClose, qrCodeUrl }) {
         Scannez le QR code
       </h2>
       {/* QR code dans un carré beige */}
-      <div className="bg-[var(--secondary)] rounded-2xl p-6 flex items-center justify-center"
-           style={{ width: '18rem', height: '18rem' }}>
+      <div className="bg-[var(--secondary)] rounded-2xl p-6 flex items-center justify-center w-72 h-72">
         <img
           src={qrCodeUrl}
           alt="QR Code"
-          className="w-56 h-56"
-          style={{ objectFit: "contain" }}
+          className="w-56 h-56 object-contain"
         />
       </div>
     </Dialog>
