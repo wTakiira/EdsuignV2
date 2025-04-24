@@ -22,15 +22,14 @@ export default function SignatureBox() {
   };
 
   return (
-    <div className="w-[900px] min-h-[260px] bg-white rounded-2xl border border-[var(--secondary)] flex flex-col justify-between p-6 relative shadow-sm">
-      {/* Titre en haut à gauche */}
-      <span className="absolute left-6 top-4 text-[var(--placeholder)] text-lg font-semibold font-['Poppins']">
-        Veuillez signer ci-dessous :
-      </span>
+    <div className="w-[900px] min-h-[260px] bg-white rounded-2xl flex flex-col justify-between relative items-center">
 
       {/* Zone de signature */}
-      <div className="w-full flex-1 flex items-center justify-center relative mt-10 mb-6">
+      <div className="w-full flex-1 flex items-center justify-center relative">
         {/* Avant signature */}
+        <span className="absolute left-6 top-4 text-[var(--placeholder)] text-lg font-semibold font-['Poppins']">
+        Veuillez signer ci-dessous :
+      </span>
         {!showPad && !signatureURL && (
           <div
             className="w-full h-40 rounded-xl border-2 border-dashed border-[var(--primary)] flex items-center justify-center cursor-pointer relative"

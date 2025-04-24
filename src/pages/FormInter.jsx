@@ -4,7 +4,7 @@ import ModuleInfo from "../components/ModuleInfo";
 
 export default function FormInter() {
 
-    const data = [
+    const moduleInfo = [
         {
             icon: "book-open",
             title: "Framework CSS",
@@ -44,7 +44,7 @@ export default function FormInter() {
                 </div>
                 <button>Formulaire</button>
               </div>
-              <ModuleInfo data={data} />
+              <ModuleInfo data={moduleInfo} />
               <PresenceTable type={2} />
             </div>
     )

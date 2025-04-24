@@ -1,6 +1,6 @@
 import FeatherIcon from "feather-icons-react";
 
-export default function ModuleInfo({ data }) {
+export default function ModuleInfo({ data, disposition }) {
   // Fonction pour regrouper les éléments par 2
   const groupedData = [];
   for (let i = 0; i < data.length; i += 2) {
@@ -15,8 +15,9 @@ export default function ModuleInfo({ data }) {
         borderWidth: "1px",
         borderColor: "var(--primary)",
         width: 770,
-        display: "grid", 
-        gridTemplateColumns: "repeat(2, 1fr)", 
+        display: disposition || "grid", 
+        gridTemplateColumns: disposition ? "none" : "repeat(2, 1fr)",
+        flexDirection: disposition ? "column" : "none", 
         gap: "var(--big-space)",
       }}
     >
