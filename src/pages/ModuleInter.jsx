@@ -2,7 +2,6 @@ import PresenceTable from "../components/Table";
 import FeatherIcon from 'feather-icons-react';
 import QrCodeModal from "../components/QrCodeModal";
 import { useState } from "react";
-import NameDropdown from "../components/NameDropDown";
 
 
 export default function ModuleInter() {
@@ -53,11 +52,6 @@ export default function ModuleInter() {
        onClose={() => setOpen(false)}
        qrCodeUrl="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tonlien.com"
      />
-           <NameDropdown
-  names={names}
-  value={selectedName}
-  onChange={setSelectedName}
-/>
      </>
     
   );

@@ -14,6 +14,9 @@ export default function NavBar() {
       <Link to="/form-inter">
         <FeatherIcon icon="smile" color='var(--secondary)'size='32px'/>
       </Link>
+      <Link to="/module-stagiaire">
+        <FeatherIcon icon="book-open" color='var(--secondary)'size='32px'/>
+      </Link>
     </nav>
   );
 }
