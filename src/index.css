@@ -6,14 +6,13 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #242424;
+  color: #323232;
   background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 
   --primary: #9381FF;
   --secondary: #FFD8BE;
@@ -76,7 +75,44 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-
+.h1 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 64px; /* 100% */
+  letter-spacing: -0.084px;
+}
+.subtile-h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+.h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.subtile-h2 {
+  font-size: 32px;
+  font-weight: 600;
+}
+.h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+.subtile-h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.text{
+  font-size: 20px;
+font-weight: 400;
+}
+.long-text{
+  font-size: 16px;
+  font-weight: 600;
+}
+.button-text{
+  font-size: 16px;
+  font-weight: 500;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

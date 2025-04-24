@@ -104,7 +104,7 @@ export default function PresenceTable(type) {
           ? {
               ...row,
               presence: "Présent",
-              time: "09:01", // tu peux mettre l'heure actuelle ici
+              time: "09:01",
               signature: true,
             }
           : row
@@ -237,7 +237,6 @@ export default function PresenceTable(type) {
                       className="font-normal text-center"
                     >
                       {row.signature ? <img src={Signature} className="mx-[auto]" /> : "Pas de signature"}
-                      {/* {row.signature} */}
                     </Typography>
                   </td>
                   <td className={classes}>
