@@ -25,17 +25,18 @@ export default function SignatureBox() {
     <div className="w-[900px] min-h-[260px] bg-white rounded-2xl flex flex-col justify-between relative items-center">
 
       {/* Zone de signature */}
-      <div className="w-full flex-1 flex items-center justify-center relative">
+      <div className="w-full flex-1 flex items-center justify-center relative ">
         {/* Avant signature */}
-        <span className="absolute left-6 top-4 text-[var(--placeholder)] text-lg font-semibold font-['Poppins']">
-        Veuillez signer ci-dessous :
-      </span>
+       
         {!showPad && !signatureURL && (
           <div
-            className="w-full h-40 rounded-xl border-2 border-dashed border-[var(--primary)] flex items-center justify-center cursor-pointer relative"
+            className="w-full h-40 rounded-xl border-2 border-[var(--secondary)] flex items-center justify-center cursor-pointer relative"
             onClick={() => setShowPad(true)}
           >
-            <span className="text-[var(--primary)] opacity-60">Cliquez pour signer</span>
+             <span className="absolute left-6 top-4 text-[var(--placeholder)] text-lg font-semibold font-['Poppins']">
+        Veuillez signer ci-dessous :
+      </span>
+        
             {/* Icône crayon en bas à droite */}
             <span className="absolute bottom-3 right-4">
               <FeatherIcon icon="edit-2" size={24} color="var(--primary)" />
@@ -44,14 +45,14 @@ export default function SignatureBox() {
         )}
         {/* Pad de signature */}
         {showPad && (
-          <div className="w-full relative">
+          <div className="w-full relative rounded-xl border border-[var(--secondary)] bg-white">
             <SignatureCanvas
               ref={signatureRef}
               penColor="#9381FF"
               canvasProps={{
                 width: 800,
                 height: 160,
-                className: "rounded-xl border border-[var(--primary)] bg-white"
+                
               }}
             />
             {/* Icône crayon en bas à droite */}
